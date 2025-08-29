@@ -13,6 +13,7 @@ export class LoginComponent {
     const enteredEmail = formData.form.value.email;
     const enteredPassword = formData.form.value.password;
 
+    console.log(formData.form);
     console.log(enteredEmail, enteredPassword);
   }
 }
