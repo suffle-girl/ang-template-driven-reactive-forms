@@ -14,5 +14,10 @@ export class LoginComponent {
     password: new FormControl(""),
   });
 
-  onSubmit() {}
+  onSubmit() {
+    console.log(this.myForm);
+    const enteredEmail = this.myForm.value.email;
+    const enteredPassword = this.myForm.value.password;
+    console.log(enteredEmail, enteredPassword);
+  }
 }
