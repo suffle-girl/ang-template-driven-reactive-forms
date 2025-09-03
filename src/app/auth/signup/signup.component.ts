@@ -1,5 +1,6 @@
 import { Component } from "@angular/core";
 import {
+  FormArray,
   FormControl,
   FormGroup,
   ReactiveFormsModule,
@@ -39,10 +40,16 @@ export class SignupComponent {
     >("student", {
       validators: [Validators.required],
     }),
+    source: new FormArray([
+      new FormControl(false),
+      new FormControl(false),
+      new FormControl(false),
+    ]),
     agree: new FormControl(false, { validators: [Validators.required] }),
   });
 
   onSubmit() {
+    console.log(this.form);
     const enteredEmail = this.form.value.email;
     const enteredPassword = this.form.value.passwords?.password;
     console.log(enteredEmail, enteredPassword);
